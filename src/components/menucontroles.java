@@ -13,6 +13,7 @@ import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import views.Login;
 
 /**
  *
@@ -56,17 +57,11 @@ public class menucontroles extends javax.swing.JPanel {
         panelBordes5.setLayout(panelBordes5Layout);
         panelBordes5Layout.setHorizontalGroup(
             panelBordes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBordes5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnminimizar, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btnminimizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
         panelBordes5Layout.setVerticalGroup(
             panelBordes5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBordes5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnminimizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btnminimizar, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
         );
 
         panelBordes1.setBackground(new java.awt.Color(251, 88, 84));
@@ -87,17 +82,11 @@ public class menucontroles extends javax.swing.JPanel {
         panelBordes1.setLayout(panelBordes1Layout);
         panelBordes1Layout.setHorizontalGroup(
             panelBordes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBordes1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btncerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btncerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
         panelBordes1Layout.setVerticalGroup(
             panelBordes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBordes1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btncerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btncerrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelBordes3.setBackground(new java.awt.Color(52, 200, 72));
@@ -118,17 +107,11 @@ public class menucontroles extends javax.swing.JPanel {
         panelBordes3.setLayout(panelBordes3Layout);
         panelBordes3Layout.setHorizontalGroup(
             panelBordes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBordes3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnmaximizar, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btnmaximizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
         panelBordes3Layout.setVerticalGroup(
             panelBordes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBordes3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnmaximizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(btnmaximizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -158,25 +141,30 @@ public class menucontroles extends javax.swing.JPanel {
 
     private void btncerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrarMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        System.exit(0);        
+        
+        /*Login login = new Login();
+        login.setVisible(true);
+        JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (parentFrame != null) {
+            parentFrame.dispose();
+        }*/
     }//GEN-LAST:event_btncerrarMouseClicked
 
     private boolean isMaximized = false;
     private void btnmaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnmaximizarMouseClicked
         // TODO add your handling code here:
-        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-    
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);    
         if (frame != null) { 
-            // Alterna entre maximizar y restaurar el tamaño del JFrame
             if (isMaximized) {
-                frame.setSize(800, 600); // Tamaño de ejemplo para restaurar (ajusta según tus preferencias)
-                frame.setLocationRelativeTo(null); // Centra la ventana
+                //[1213, 652] - [1213, 652]
+                frame.setSize(1213, 652);
+                frame.setLocationRelativeTo(null);
                 isMaximized = false;
             } else {
-                // Obtiene las dimensiones de la pantalla sin la barra de tareas
                 GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
                 Rectangle bounds = env.getMaximumWindowBounds();
-                frame.setBounds(bounds); // Establece el tamaño para que no cubra la barra de tareas
+                frame.setBounds(bounds);
                 isMaximized = true;
             }
         }
@@ -186,8 +174,8 @@ public class menucontroles extends javax.swing.JPanel {
         // TODO add your handling code here:
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
     
-        if (frame != null) { // Verifica que el JFrame no sea nulo
-            frame.setExtendedState(JFrame.ICONIFIED); // Minimiza el JFrame
+        if (frame != null) {
+            frame.setExtendedState(JFrame.ICONIFIED);
         }
     }//GEN-LAST:event_btnminimizarMouseClicked
 
@@ -209,4 +197,5 @@ public class menucontroles extends javax.swing.JPanel {
     private layouts.panelBordes panelBordes3;
     private layouts.panelBordes panelBordes5;
     // End of variables declaration//GEN-END:variables
+
 }

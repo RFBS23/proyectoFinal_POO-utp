@@ -5,6 +5,7 @@
 
 package views;
 
+import components.menucontroles;
 import controllers.Login_controllers;
 import java.awt.Color;
 import java.awt.Image;
@@ -29,6 +30,9 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setLogoImage();
         init();
+        
+        menucontroles menu = new menucontroles();
+        add(menu);
     }
 
     private void init () {
@@ -80,6 +84,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(246, 249, 255));
+        setIconImages(null);
         setUndecorated(true);
         setResizable(false);
 
